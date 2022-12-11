@@ -16,8 +16,6 @@ const Reply = ({
 
   const [replying, setReplying] = useState(false);
   const [time, setTime] = useState("");
-  const [vote, setVoted] = useState(false);
-  const [score, setScore] = useState(commentData.score);
   const [editing, setEditing] = useState(false);
   const [content, setContent] = useState(commentData.content);
   const [deleting, setDeleting] = useState(false);
@@ -29,8 +27,7 @@ const Reply = ({
 
   useEffect(() => {
     setTime(commentPostedTime(differenceInTime));
-    localStorage.setItem("voteState", vote);
-  }, [differenceInTime, commentPostedTime, vote]);
+  }, [differenceInTime, commentPostedTime]);
 
   // adding reply
   const addReply = (newReply) => {
